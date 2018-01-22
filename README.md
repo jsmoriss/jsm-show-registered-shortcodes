@@ -13,7 +13,7 @@
 
 <h2>Description</h2>
 
-<p>Show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.</p>
+<p>Show all registered shortcodes, along with their callback functions, under a "Registered Shortcodes" toolbar menu item.</p>
 
 
 <h2>Installation</h2>

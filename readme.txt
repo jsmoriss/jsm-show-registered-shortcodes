@@ -17,7 +17,7 @@ Show all registered shortcodes under a "Registered Shortcodes" toolbar menu item
 
 == Description ==
 
-Show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
+Show all registered shortcodes, along with their callback functions, under a "Registered Shortcodes" toolbar menu item.
 
 == Installation ==
 
