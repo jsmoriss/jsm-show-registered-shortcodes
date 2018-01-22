@@ -15,6 +15,8 @@
 
 <p>A simple and lightweight plugin to show all registered shortcodes, along with their callback functions, under a "Registered Shortcodes" toolbar menu item.</p>
 
+<p>Some shortcodes may only be registered on the front-end &mdash; using the admin toolbar menu allows the plugin to show all currently registered shortcodes, either on the admin back-end or front-end webpage.</p>
+
 
 <h2>Installation</h2>
 
