@@ -35,9 +35,6 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 		private static $instance;
 
-		private $pagehook;
-		private $cols = 2;
-
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
