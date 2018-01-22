@@ -41,13 +41,12 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-			add_action( 'admin_bar_menu', array( &$this, 'add_toolbar_menu' ), 5000 );
 
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
-				//add_action( 'admin_menu', array( &$this, 'add_admin_submenus' ) );
-				//add_action( 'add_meta_boxes', array( &$this, 'add_meta_boxes' ), 2000, 2 );
 			}
+
+			add_action( 'admin_bar_menu', array( &$this, 'add_toolbar_menu' ), 5000 );
 		}
 	
 		public static function &get_instance() {
@@ -59,38 +58,6 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 	
 		public static function load_textdomain() {
 			load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
-		}
-
-		public function add_toolbar_menu( $wp_admin_bar ) {
-
-			$page_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
-			$menu_slug = 'jsm-show-registered-shortcodes';
-
-			// add a parent item
-			$args = array(
-				'id' => $menu_slug,
-				'title' => $page_title,
-			);
-
-			$wp_admin_bar->add_node( $args );
-
-			global $shortcode_tags;
-
-			foreach( $shortcode_tags as $code => $callback ) {
-
-				$item_name = $this->get_callback_name( $callback );
-				$item_title = '<span class="shortcode-name" style="font-weight:bold;">[' . $code . ']</span> ' .
-					'<span class="function-name" style="font-weight:normal; font-style:italic;">' . $item_name . '</span>';
-
-				// add a submenu item
-				$args = array(
-					'id' => sanitize_title( $code . $item_name ),
-					'title' => $item_title,
-					'parent' => $menu_slug,
-				);
-
-				$wp_admin_bar->add_node( $args );
-			}
 		}
 
 		public static function check_wp_version() {
@@ -116,76 +83,37 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			}
 		}
 
-		public function add_admin_submenus() {
+		public function add_toolbar_menu( $wp_admin_bar ) {
 
-			$parent_slug = 'tools.php';
-			$page_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
-			$menu_title = __( 'Show Shortcodes', 'jsm-show-registered-shortcodes' );
-			$cap_name = 'manage_options';
-			$menu_slug = 'jsm-show-registered-shortcodes';
-			$callback = array( &$this, 'show_setting_page' );
+			$parent_slug = 'jsm-show-registered-shortcodes';
+			$parent_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
 
-			$this->pagehook = add_submenu_page( $parent_slug, $page_title, $menu_title, $cap_name, $menu_slug, $callback );
-		}
+			// add a parent item
+			$args = array(
+				'id' => $parent_slug,
+				'title' => $parent_title,
+			);
 
-		public function show_setting_page() {
-
-			$page_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
-
-			echo '<div class="wrap" id="'.$this->pagehook.'">' . "\n";
-			echo '<h1>' . $page_title . '</h1>' . "\n";
-			echo '<div id="poststuff" class="metabox-holder no-right-sidebar">' . "\n";
-			echo '<div id="post-body" class="no-sidebar">' . "\n";
-			echo '<div id="post-body-content" class="no-sidebar-content">' . "\n";
-
-			$this->show_shortcodes();
-
-			echo '</div><!-- #post-body-content -->';
-			echo '</div><!-- #post-body -->';
-			echo '</div><!-- #poststuff -->';
-			echo '</div><!-- .wrap -->';
-		}
-
-		public function add_meta_boxes( $post_type, $post_obj ) {
-
-			if ( ! isset( $post_obj->ID ) ) {	// exclude links
-				return;
-			}
-	
-			if ( ! current_user_can( 'manage_options', $post_obj->ID ) ) {
-				return;
-			}
-
-			$page_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
-			$menu_slug = 'jsm-show-registered-shortcodes';
-
-			add_meta_box( $menu_slug, $page_title, array( &$this, 'show_shortcodes' ), $post_type, 'normal', 'low' );
-		}
-
-		public function show_shortcodes() {
+			$wp_admin_bar->add_node( $args );
 
 			global $shortcode_tags;
 
-			echo '<style type="text/css">
-				#shortcode-table {
-					-moz-column-count:' . $this->cols . ';
-					-webkit-column-count:' . $this->cols . ';
-					column-count:' . $this->cols . ';
-				}
-			</style>' . "\n";
-
-			echo '<div id="shortcode-table">' . "\n";
-
 			foreach( $shortcode_tags as $code => $callback ) {
-				echo '<p>';
-				echo '<span class="shortcode-name" style="font-weight:bold;">[' . $code . ']</span> ';
-				echo '<span class="function-name" style="font-weight:normal; font-style:italic;">';
-				echo $this->get_callback_name( $callback );
-				echo '</span>';
-				echo '</p>';
-			}
 
-			echo '</div><!-- #shortcode-table -->';
+				$item_name = $this->get_callback_name( $callback );
+				$item_slug = sanitize_title( $code . $item_name );
+				$item_title = '<span class="shortcode-name" style="font-weight:bold;">[' . $code . ']</span> ' .
+					'<span class="function-name" style="font-weight:normal; font-style:italic;">' . $item_name . '</span>';
+
+				// add a submenu item
+				$args = array(
+					'id' => $item_slug,
+					'title' => $item_title,
+					'parent' => $parent_slug,
+				);
+
+				$wp_admin_bar->add_node( $args );
+			}
 		}
 
 		private function get_callback_name( $callback ) {
