@@ -82,8 +82,12 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 		public function add_toolbar_menu( $wp_admin_bar ) {
 
+			global $shortcode_tags;
+
 			$parent_slug = 'jsm-show-registered-shortcodes';
-			$parent_title = __( 'Registered Shortcodes', 'jsm-show-registered-shortcodes' );
+
+			// translators: %d is the total shortcode count 
+			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
 			// add a parent item
 			$args = array(
@@ -92,8 +96,6 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			);
 
 			$wp_admin_bar->add_node( $args );
-
-			global $shortcode_tags;
 
 			foreach( $shortcode_tags as $code => $callback ) {
 

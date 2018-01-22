@@ -21,8 +21,9 @@ msgstr ""
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
-#: jsm-show-registered-shortcodes.php:86
-msgid "Registered Shortcodes"
+#. translators: %d is the total shortcode count
+#: jsm-show-registered-shortcodes.php:90
+msgid "Registered Shortcodes (%d)"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
