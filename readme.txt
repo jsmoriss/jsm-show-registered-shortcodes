@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-registered-shortcodes/assets/
-Tags: meta, post meta, inspector, custom fields, debug, tools
+Tags: inspector, shortcodes, debug, tools
 Contributors: jsmoriss
 Requires PHP: 5.4
 Requires At Least: 3.8
