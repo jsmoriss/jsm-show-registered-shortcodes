@@ -136,13 +136,6 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			foreach ( $sorted_items as $item_slug => $args ) {
 				$wp_admin_bar->add_node( $args );
 			}
-
-			foreach ( $sorted_items as $item_slug => $args ) {
-				$args['id'] .= '-1';
-				$wp_admin_bar->add_node( $args );
-				$args['id'] .= '-1';
-				$wp_admin_bar->add_node( $args );
-			}
 		}
 
 		private function get_callback_name( $callback ) {
