@@ -83,6 +83,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		public function add_admin_bar_css() {
 			$custom_style_css = '
 				#wp-admin-bar-jsm-show-registered-shortcodes ul {
+					max-height:90vh;	/* css3 90% of viewport height */
 					overflow-y:scroll;
 				}
 				#wp-admin-bar-jsm-show-registered-shortcodes span.shortcode-name {
@@ -133,6 +134,13 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			// add submenu items
 			foreach ( $sorted_items as $item_slug => $args ) {
+				$wp_admin_bar->add_node( $args );
+			}
+
+			foreach ( $sorted_items as $item_slug => $args ) {
+				$args['id'] .= '-1';
+				$wp_admin_bar->add_node( $args );
+				$args['id'] .= '-1';
 				$wp_admin_bar->add_node( $args );
 			}
 		}
