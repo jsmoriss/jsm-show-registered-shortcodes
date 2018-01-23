@@ -57,6 +57,8 @@ Some shortcodes may only be registered on the front-end &mdash; using the admin 
 
 == Screenshots ==
 
+01. Registered Shortcodes list in the WordPress toolbar menu.
+
 == Changelog ==
 
 <h3>Repositories</h3>
