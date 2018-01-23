@@ -38,12 +38,12 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+			add_action( 'admin_bar_init', array( &$this, 'add_toolbar_css' ) );
+			add_action( 'admin_bar_menu', array( &$this, 'add_toolbar_menu' ), 5000 );
 
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 			}
-
-			add_action( 'admin_bar_menu', array( &$this, 'add_toolbar_menu' ), 5000 );
 		}
 	
 		public static function &get_instance() {
@@ -80,6 +80,22 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			}
 		}
 
+		public function add_toolbar_css() {
+			$custom_style_css = '
+				#wp-admin-bar-jsm-show-registered-shortcodes ul {
+					overflow-y:scroll;
+				}
+				#wp-admin-bar-jsm-show-registered-shortcodes span.shortcode-name {
+					font-weight:bold;
+				}
+				#wp-admin-bar-jsm-show-registered-shortcodes span.function-name {
+					font-weight:normal;
+					font-style:italic;
+				}
+			';
+			wp_add_inline_style( 'admin-bar', $custom_style_css );
+		}
+
 		public function add_toolbar_menu( $wp_admin_bar ) {
 
 			global $shortcode_tags;
@@ -97,20 +113,26 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			$wp_admin_bar->add_node( $args );
 
-			foreach( $shortcode_tags as $code => $callback ) {
+			$sorted_items = array();
+
+			foreach ( $shortcode_tags as $code => $callback ) {
 
 				$item_name = $this->get_callback_name( $callback );
 				$item_slug = sanitize_title( $code . '-' . $item_name );
-				$item_title = '<span class="shortcode-name" style="font-weight:bold;">[' . $code . ']</span> ' .
-					'<span class="function-name" style="font-weight:normal; font-style:italic;">' . $item_name . '</span>';
+				$item_title = '<span class="shortcode-name">[' . $code . ']</span> ' .
+					'<span class="function-name">' . $item_name . '</span>';
 
-				// add a submenu item
-				$args = array(
+				$sorted_items[$item_slug] = array(
 					'id' => $item_slug,
 					'title' => $item_title,
 					'parent' => $parent_slug,
 				);
+			}
 
+			ksort( $sorted_items );
+
+			// add a submenu items
+			foreach ( $sorted_items as $item_slug => $args ) {
 				$wp_admin_bar->add_node( $args );
 			}
 		}
