@@ -100,7 +100,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			foreach( $shortcode_tags as $code => $callback ) {
 
 				$item_name = $this->get_callback_name( $callback );
-				$item_slug = sanitize_title( $code . $item_name );
+				$item_slug = sanitize_title( $code . '-' . $item_name );
 				$item_title = '<span class="shortcode-name" style="font-weight:bold;">[' . $code . ']</span> ' .
 					'<span class="function-name" style="font-weight:normal; font-style:italic;">' . $item_name . '</span>';
 
