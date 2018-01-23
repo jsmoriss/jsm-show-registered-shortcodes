@@ -36,8 +36,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Show all registered shortcodes under a \"Registered Shortcodes\" toolbar "
-"menu item."
+"Simple and lightweight plugin to show all registered shortcodes under a "
+"\"Registered Shortcodes\" toolbar menu item."
 msgstr ""
 
 #. Author of the plugin/theme

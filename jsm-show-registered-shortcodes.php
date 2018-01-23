@@ -9,7 +9,7 @@
  * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
+ * Description: Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
  * Requires PHP: 5.4
  * Requires At Least: 3.8
  * Tested Up To: 4.9.2
@@ -38,8 +38,8 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-			add_action( 'admin_bar_init', array( &$this, 'add_toolbar_css' ) );
-			add_action( 'admin_bar_menu', array( &$this, 'add_toolbar_menu' ), 5000 );
+			add_action( 'admin_bar_init', array( &$this, 'add_admin_bar_css' ) );
+			add_action( 'admin_bar_menu', array( &$this, 'add_admin_bar_menu' ), 5000 );
 
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
@@ -80,7 +80,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			}
 		}
 
-		public function add_toolbar_css() {
+		public function add_admin_bar_css() {
 			$custom_style_css = '
 				#wp-admin-bar-jsm-show-registered-shortcodes ul {
 					overflow-y:scroll;
@@ -96,7 +96,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			wp_add_inline_style( 'admin-bar', $custom_style_css );
 		}
 
-		public function add_toolbar_menu( $wp_admin_bar ) {
+		public function add_admin_bar_menu( $wp_admin_bar ) {
 
 			global $shortcode_tags;
 
@@ -105,7 +105,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			// translators: %d is the total shortcode count 
 			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
-			// add a parent item
+			// add the parent item
 			$args = array(
 				'id' => $parent_slug,
 				'title' => $parent_title,
@@ -131,7 +131,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			ksort( $sorted_items );
 
-			// add a submenu items
+			// add submenu items
 			foreach ( $sorted_items as $item_slug => $args ) {
 				$wp_admin_bar->add_node( $args );
 			}
