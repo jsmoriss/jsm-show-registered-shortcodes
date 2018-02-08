@@ -148,7 +148,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 					return get_class( $callback[0] ) . '->' . $callback[1];
 				}
 			}
-			return '';	// just in case
+			return '';	// Just in case.
 		}
 	}
 
