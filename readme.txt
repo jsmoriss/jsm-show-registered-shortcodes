@@ -10,7 +10,7 @@ Tags: inspector, shortcodes, debug, tools
 Contributors: jsmoriss
 Requires PHP: 5.4
 Requires At Least: 3.8
-Tested Up To: 4.9.5
+Tested Up To: 4.9.6
 Stable Tag: 1.0.0
 
 Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
