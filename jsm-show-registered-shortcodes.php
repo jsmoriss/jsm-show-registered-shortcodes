@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 	class JSMShowRegisteredShortcodes {
 
 		private static $instance;
-		private static $wp_min_version = 3.8;
+		private static $wp_min_version = '3.8';
 
 		private function __construct() {
 
