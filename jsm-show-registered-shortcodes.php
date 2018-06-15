@@ -39,8 +39,8 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-			add_action( 'admin_bar_init', array( &$this, 'add_admin_bar_css' ) );
-			add_action( 'admin_bar_menu', array( &$this, 'add_admin_bar_menu' ), 5000 );
+			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
+			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
 
 			if ( is_admin() ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v3.8 or better.
