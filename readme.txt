@@ -47,14 +47,6 @@ Some shortcodes may only be registered on the front-end &mdash; using the admin 
 
 == Frequently Asked Questions ==
 
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None
-
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
-
 == Screenshots ==
 
 01. Registered Shortcodes list in the WordPress toolbar menu.
