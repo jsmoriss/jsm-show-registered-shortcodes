@@ -131,9 +131,9 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 				$item_title = '<span class="shortcode-name">[' . $code . ']</span> ' .
 					'<span class="function-name">' . $item_name . '</span>';
 
-				$sorted_items[$item_slug] = array(
-					'id' => $item_slug,
-					'title' => $item_title,
+				$sorted_items[ $item_slug ] = array(
+					'id'     => $item_slug,
+					'title'  => $item_title,
 					'parent' => $parent_slug,
 				);
 			}
