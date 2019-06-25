@@ -114,7 +114,9 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			// translators: %d is the total shortcode count 
 			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
-			// add the parent item
+			/**
+			 * Add the parent item.
+			 */
 			$args = array(
 				'id' => $parent_slug,
 				'title' => $parent_title,
