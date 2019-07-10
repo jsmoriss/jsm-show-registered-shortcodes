@@ -71,13 +71,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 **Version 1.0.0 (2018/01/22)**
 
-* *New Features*
+* **New Features**
 	* Initial release.
-* *Improvements*
+* **Improvements**
 	* None.
-* *Bugfixes*
+* **Bugfixes**
 	* None.
-* *Developer Notes*
+* **Developer Notes**
 	* None.
 
 == Upgrade Notice ==
