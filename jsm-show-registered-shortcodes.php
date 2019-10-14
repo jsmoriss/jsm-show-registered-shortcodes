@@ -12,7 +12,7 @@
  * Description: Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
  * Requires PHP: 5.6
  * Requires At Least: 3.9
- * Tested Up To: 5.2.3
+ * Tested Up To: 5.2.4
  * Version: 1.0.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
