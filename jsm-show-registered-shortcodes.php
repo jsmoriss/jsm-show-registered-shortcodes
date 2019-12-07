@@ -43,7 +43,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
 
 			if ( is_admin() ) {
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );	// Requires WP v3.9 or better.
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 			}
 		}
 	
