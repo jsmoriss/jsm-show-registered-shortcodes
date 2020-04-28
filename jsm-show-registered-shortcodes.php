@@ -47,7 +47,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 			}
 
-			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
 
@@ -93,15 +93,15 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			}
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
 
-			static $do_once = null;
+			static $loaded = null;
 
-			if ( null !== $do_once ) {	// Already loaded.
+			if ( null !== $loaded ) {
 				return;
 			}
 
-			$do_once = true;
+			$loaded = true;
 
 			load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
 		}
