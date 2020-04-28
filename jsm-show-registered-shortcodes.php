@@ -34,15 +34,22 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 	class JSMShowRegisteredShortcodes {
 
 		private static $instance;
+
 		private static $wp_min_version = '4.0';
 
 		private function __construct() {
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
 			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
+
 			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
 
 			if ( is_admin() ) {
+
+				/**
+				 * Check for the minimum required WordPress version.
+				 */
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
 			}
 		}
@@ -57,9 +64,13 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		}
 	
 		public static function load_textdomain() {
+
 			load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
 		}
 
+		/**
+		 * Check for the minimum required WordPress version.
+		 */
 		public static function check_wp_version() {
 
 			global $wp_version;
@@ -68,23 +79,18 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 				$plugin = plugin_basename( __FILE__ );
 
-				if ( is_plugin_active( $plugin ) ) {
-
-					if ( ! function_exists( 'deactivate_plugins' ) ) {
-						require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
-					}
-
-					$plugin_data = get_plugin_data( __FILE__, $markup = false );
-
-					deactivate_plugins( $plugin, $silent = true );
-
-					wp_die( 
-						'<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
-							'jsm-show-registered-shortcodes' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . '</p>' . 
-						'<p>' . sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
-							'jsm-show-registered-shortcodes' ), 'WordPress', $plugin_data['Name'] ) . '</p>'
-					);
+				if ( ! function_exists( 'deactivate_plugins' ) ) {
+					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/plugin.php';
 				}
+
+				$plugin_data = get_plugin_data( __FILE__, $markup = false );
+
+				deactivate_plugins( $plugin, $silent = true );
+
+				wp_die( '<p>' . sprintf( __( '%1$s requires %2$s version %3$s or higher and has been deactivated.',
+					'jsm-show-registered-shortcodes' ), $plugin_data['Name'], 'WordPress', self::$wp_min_version ) . ' ' . 
+						sprintf( __( 'Please upgrade %1$s before trying to re-activate the %2$s plugin.',
+							'jsm-show-registered-shortcodes' ), 'WordPress', $plugin_data['Name'] ) . '</p>' );
 			}
 		}
 
