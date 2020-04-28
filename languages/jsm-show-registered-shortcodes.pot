@@ -13,16 +13,16 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: jsm-show-registered-shortcodes.php:90
+#: jsm-show-registered-shortcodes.php:89
 msgid "%1$s requires %2$s version %3$s or higher and has been deactivated."
 msgstr ""
 
-#: jsm-show-registered-shortcodes.php:92
+#: jsm-show-registered-shortcodes.php:91
 msgid "Please upgrade %1$s before trying to re-activate the %2$s plugin."
 msgstr ""
 
 #. translators: %d is the total shortcode count
-#: jsm-show-registered-shortcodes.php:121
+#: jsm-show-registered-shortcodes.php:133
 msgid "Registered Shortcodes (%d)"
 msgstr ""
 
