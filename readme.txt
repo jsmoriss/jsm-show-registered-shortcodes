@@ -82,7 +82,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.8 =
+= 1.0.0 =
 
 (2018/01/22) Initial release.
 
