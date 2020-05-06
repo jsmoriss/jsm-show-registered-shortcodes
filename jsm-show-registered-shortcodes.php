@@ -33,7 +33,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 	class JSMShowRegisteredShortcodes {
 
-		private static $instance;
+		private static $instance = null;
 
 		private static $wp_min_version = '4.0';
 
@@ -56,7 +56,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 	
 		public static function &get_instance() {
 
-			if ( ! isset( self::$instance ) ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self;
 			}
 
