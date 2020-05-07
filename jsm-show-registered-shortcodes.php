@@ -35,7 +35,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 		private static $instance = null;
 
-		private static $wp_min_version = '4.0';
+		private static $wp_min_version = '4.2';
 
 		private function __construct() {
 
@@ -44,7 +44,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 				/**
 				 * Check for the minimum required WordPress version.
 				 */
-				add_action( 'admin_init', array( __CLASS__, 'check_wp_version' ) );
+				add_action( 'admin_init', array( __CLASS__, 'check_wp_min_version' ) );
 			}
 
 			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
@@ -68,7 +68,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		 *
 		 * If we don't have the minimum required version, then de-activate ourselves and die.
 		 */
-		public static function check_wp_version() {
+		public static function check_wp_min_version() {
 
 			global $wp_version;
 
