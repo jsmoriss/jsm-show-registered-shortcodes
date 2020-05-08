@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
 Tested Up To: 5.4.1
-Stable Tag: 1.0.0
+Stable Tag: 1.1.0
 
 Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
 
@@ -69,20 +69,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0 (2018/01/22)**
+**Version 1.1.0 (2020/05/08)**
 
 * **New Features**
-	* Initial release.
+	* None.
 * **Improvements**
 	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Maintenance release - minor code formatting changes.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 1.1.0 =
 
-(2018/01/22) Initial release.
+(2020/05/08) Maintenance release - minor code formatting changes.
 

@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
- * Version: 1.0.0
+ * Version: 1.1.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -57,6 +57,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 
@@ -111,6 +112,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 		}
 
 		public function add_admin_bar_css() {
+
 			$custom_style_css = '
 				#wp-admin-bar-jsm-show-registered-shortcodes ul {
 					max-height:90vh;	/* css3 90% of viewport height */
@@ -124,6 +126,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 					font-style:italic;
 				}
 			';
+
 			wp_add_inline_style( 'admin-bar', $custom_style_css );
 		}
 
@@ -164,22 +167,31 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			ksort( $sorted_items );
 
-			// add submenu items
+			// Add submenu items.
 			foreach ( $sorted_items as $item_slug => $args ) {
+
 				$wp_admin_bar->add_node( $args );
 			}
 		}
 
 		private function get_callback_name( $callback ) {
+
 			if ( is_string( $callback ) ) {
+
 				return $callback;
+
 			} elseif ( is_array( $callback ) ) {
-				if ( is_string( $callback[0] ) ) {	// static method
+
+				if ( is_string( $callback[0] ) ) {	// Static method.
+
 					return $callback[0] . ':: ' . $callback[1];
+
 				} elseif ( is_object( $callback[0] ) ) {
+
 					return get_class( $callback[0] ) . '->' . $callback[1];
 				}
 			}
+
 			return '';	// Just in case.
 		}
 	}
