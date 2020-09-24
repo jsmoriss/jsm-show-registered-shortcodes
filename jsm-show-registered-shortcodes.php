@@ -53,7 +53,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
 		}
-	
+
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
@@ -63,7 +63,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 			return self::$instance;
 		}
-	
+
 		/**
 		 * Check for the minimum required WordPress version.
 		 *
