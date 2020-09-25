@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
  * Requires PHP: 5.6
- * Requires At Least: 4.2
+ * Requires At Least: 4.4
  * Tested Up To: 5.5.1
  * Version: 1.1.0
  *
@@ -35,7 +35,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 		private static $instance = null;
 
-		private static $wp_min_version = '4.2';
+		private static $wp_min_version = '4.4';
 
 		private function __construct() {
 
