@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1
- * Version: 1.1.0
+ * Version: 1.2.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -47,7 +47,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 				add_action( 'admin_init', array( __CLASS__, 'check_wp_min_version' ) );
 			}
 
-			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
+			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
 			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
 
@@ -62,6 +62,20 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 			}
 
 			return self::$instance;
+		}
+
+		public function init_textdomain() {
+
+			static $local_cache = null;
+
+			if ( null === $local_cache ) {
+
+				$local_cache = 'jsm-show-registered-shortcodes';
+
+				load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
+			}
+
+			return $local_cache;
 		}
 
 		/**
@@ -97,19 +111,6 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 				wp_die( '<p>' . sprintf( $notice_version_transl, $plugin_data[ 'Name' ], 'WordPress', self::$wp_min_version ) . ' ' . 
 					 sprintf( $notice_upgrade_transl, 'WordPress', $plugin_data[ 'Name' ] ) . '</p>' );
 			}
-		}
-
-		public static function init_textdomain() {
-
-			static $loaded = null;
-
-			if ( null !== $loaded ) {
-				return;
-			}
-
-			$loaded = true;
-
-			load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
 		}
 
 		public function add_admin_bar_css() {
