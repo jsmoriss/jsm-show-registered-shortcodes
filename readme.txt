@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.4
 Tested Up To: 5.5.1
-Stable Tag: 1.1.0
+Stable Tag: 1.2.0
 
 Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
 
