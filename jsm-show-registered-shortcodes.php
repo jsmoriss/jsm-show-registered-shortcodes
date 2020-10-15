@@ -67,16 +67,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'jsm-show-registered-shortcodes';
-
-				load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'jsm-show-registered-shortcodes', false, 'jsm-show-registered-shortcodes/languages/' );
 		}
 
 		/**
