@@ -34,7 +34,7 @@ if ( ! class_exists( 'JSMShowRegisteredShortcodes' ) ) {
 
 	class JSMShowRegisteredShortcodes {
 
-		private $wp_min_version = '4.4';
+		private $wp_min_version = '4.5';
 
 		private static $instance = null;	// JSMShowRegisteredShortcodes class object.
 
