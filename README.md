@@ -18,6 +18,10 @@
 
 <p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
+<h4>Need a Boost to your Social and Search Ranking?</h4>
+
+<p>Check out <a href="https://wordpress.org/plugins/wpsso/">the WPSSO Core plugin</a> to present your content at its best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.</p>
+
 
 <h2>Installation</h2>
 
