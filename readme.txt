@@ -21,6 +21,10 @@ A simple and lightweight plugin to show registered shortcodes for the current we
 
 There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
+= Need a Boost to your Social and Search Ranking? =
+
+Check out [the WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) to present your content at its best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.
+
 == Installation ==
 
 = Automated Install =
