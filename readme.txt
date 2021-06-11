@@ -19,7 +19,7 @@ Simple and lightweight plugin to show all registered shortcodes under a "Registe
 
 A simple and lightweight plugin to show registered shortcodes for the current webpage, along with their callback functions, under a "Registered Shortcodes" toolbar menu item.
 
-There are no plugin settings &mdash; simply *install* and *activate* the plugin.
+There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Need a Boost to your Social and Search Ranking? =
 
