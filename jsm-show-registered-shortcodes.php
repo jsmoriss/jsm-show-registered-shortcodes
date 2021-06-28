@@ -8,7 +8,7 @@
  * Author: JS Morisset
  * Author URI: https://surniaulula.com/
  * License: GPLv3
- * License URI: http://www.gnu.org/licenses/gpl.txt
+ * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Simple and lightweight plugin to show all registered shortcodes under a "Registered Shortcodes" toolbar menu item.
  * Requires PHP: 7.0
  * Requires At Least: 4.5
