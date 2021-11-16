@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/jsm-show-registered-shortcodes/assets/
 Tags: inspector, shortcodes, debug, tools
 Contributors: jsmoriss
-Requires PHP: 7.0
-Requires At Least: 5.0
+Requires PHP: 7.2
+Requires At Least: 5.2
 Tested Up To: 5.8.2
 Stable Tag: 1.2.0
 
@@ -86,8 +86,8 @@ Maintenance release.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.0.
+	* PHP v7.2.
+	* WordPress v5.2.
 
 == Upgrade Notice ==
 
