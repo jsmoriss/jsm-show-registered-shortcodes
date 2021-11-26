@@ -14,7 +14,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. translators: %d is the total shortcode count
-#: jsm-show-registered-shortcodes.php:89
+#: jsm-show-registered-shortcodes.php:87
 msgid "Registered Shortcodes (%d)"
 msgstr ""
 

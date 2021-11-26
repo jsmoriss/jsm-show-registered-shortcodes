@@ -30,18 +30,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'JsmShowRegisteredShortcodes' ) ) {
+if ( ! class_exists( 'JsmSrsc' ) ) {
 
-	class JsmShowRegisteredShortcodes {
+	class JsmSrsc {
 
-		private static $instance = null;	// JsmShowRegisteredShortcodes class object.
+		private static $instance = null;	// JsmSrsc class object.
 
-		private function __construct() {
+		public function __construct() {
 
-			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
-
+			add_action( 'init', array( $this, 'init_textdomain' ) );
 			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
-
 			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
 		}
 
@@ -146,5 +144,5 @@ if ( ! class_exists( 'JsmShowRegisteredShortcodes' ) ) {
 		}
 	}
 
-	JsmShowRegisteredShortcodes::get_instance();
+	JsmSrsc::get_instance();
 }
