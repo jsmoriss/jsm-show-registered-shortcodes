@@ -69,7 +69,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-rc.1 (2021/11/26)**
+**Version 2.0.0 (2021/11/26)**
 
 * **New Features**
 	* None.
@@ -101,7 +101,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 2.0.0-rc.1 =
+= 2.0.0 =
 
 (2021/11/26) Partial rewrite of the plugin - the plugin class name has changed.
 
