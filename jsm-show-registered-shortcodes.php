@@ -83,7 +83,7 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 
 			$parent_slug = 'jsm-show-registered-shortcodes';
 
-			// translators: %d is the total shortcode count 
+			// translators: %d is the total shortcode count.
 			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
 			/**
