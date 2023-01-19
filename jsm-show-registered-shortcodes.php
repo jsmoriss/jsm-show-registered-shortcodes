@@ -86,7 +86,7 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 			// translators: %d is the total shortcode count.
 			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
-			/**
+			/*
 			 * Add the parent item.
 			 */
 			$args = array(
@@ -113,7 +113,7 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 
 			ksort( $sorted_items );
 
-			/**
+			/*
 			 * Add submenu items.
 			 */
 			foreach ( $sorted_items as $item_slug => $args ) {
