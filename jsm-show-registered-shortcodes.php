@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: JSM's Show Registered Shortcodes
  * Text Domain: jsm-show-registered-shortcodes
  * Domain Path: /languages
