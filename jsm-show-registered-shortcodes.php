@@ -39,8 +39,8 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 		public function __construct() {
 
 			add_action( 'init', array( $this, 'init_textdomain' ) );
-			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ) );
-			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000 );
+			add_action( 'admin_bar_init', array( $this, 'add_admin_bar_css' ), 10, 0 );
+			add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 5000, 1 );
 		}
 
 		public static function &get_instance() {
