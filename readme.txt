@@ -1,5 +1,5 @@
-=== JSM's Show Registered Shortcodes ===
-Plugin Name: JSM's Show Registered Shortcodes
+=== JSM Show Registered Shortcodes ===
+Plugin Name: JSM Show Registered Shortcodes
 Plugin Slug: jsm-show-registered-shortcodes
 Text Domain: jsm-show-registered-shortcodes
 Domain Path: /languages
@@ -23,10 +23,10 @@ There are no plugin settings - simply install and activate the plugin.
 
 = Related Plugins =
 
-* [JSM's Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
-* [JSM's Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
-* [JSM's Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/)
-* [JSM's Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
+* [JSM Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
+* [JSM Show Post Metadata](https://wordpress.org/plugins/jsm-show-post-meta/)
+* [JSM Show Term Metadata](https://wordpress.org/plugins/jsm-show-term-meta/)
+* [JSM Show User Metadata](https://wordpress.org/plugins/jsm-show-user-meta/)
 
 == Installation ==
 
