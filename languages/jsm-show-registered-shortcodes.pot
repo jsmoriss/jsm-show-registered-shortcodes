@@ -1,8 +1,8 @@
-# Copyright (C) 2023 JSM's Show Registered Shortcodes
-# This file is distributed under the same license as the JSM's Show Registered Shortcodes package.
+# Copyright (C) 2023 JSM Show Registered Shortcodes
+# This file is distributed under the same license as the JSM Show Registered Shortcodes package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Show Registered Shortcodes 2.0.0\n"
+"Project-Id-Version: JSM Show Registered Shortcodes 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jsm-show-"
 "registered-shortcodes\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -19,7 +19,7 @@ msgid "Registered Shortcodes (%d)"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's Show Registered Shortcodes"
+msgid "JSM Show Registered Shortcodes"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

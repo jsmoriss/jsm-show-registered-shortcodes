@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's Show Registered Shortcodes
+ * Plugin Name: JSM Show Registered Shortcodes
  * Text Domain: jsm-show-registered-shortcodes
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/jsm-show-registered-shortcodes/
