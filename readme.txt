@@ -21,28 +21,6 @@ A simple and lightweight plugin to show registered shortcodes for the current we
 
 There are no plugin settings - simply install and activate the plugin.
 
-= Available Filters =
-
-Filter the order meta shown in the metabox:
-
-<pre><code>'jsmsom_metabox_table_metadata' ( array $metadata, $order_obj )</code></pre>
-
-Array of regular expressions to exclude meta keys:
-
-<pre><code>'jsmsom_metabox_table_skip_keys' ( array $skip_keys, $order_obj )</code></pre>
-
-Capability required to show order meta:
-
-<pre><code>'jsmsom_show_metabox_capability' ( 'manage_options', $order_obj )</code></pre>
-
-Capability required to delete order meta:
-
-<pre><code>'jsmsom_delete_meta_capability' ( 'manage_options', $order_obj )</code></pre>
-
-Icon for the delete order meta button:
-
-<pre><code>'jsmsom_delete_meta_icon_class' ( 'dashicons dashicons-table-row-delete' )</code></pre>
-
 = Related Plugins =
 
 * [JSM Show Comment Metadata](https://wordpress.org/plugins/jsm-show-comment-meta/)
@@ -78,7 +56,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-dev.1 (TBD)**
+**Version 4.0.0-dev.1 (2024/01/20)**
+
+Maintenance release.
 
 * **New Features**
 	* None.
@@ -88,20 +68,6 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-
-**Version 2.0.0 (2021/11/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Partial rewrite of the plugin - the plugin class name has changed.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
@@ -110,9 +76,5 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.0.0-dev.1 =
 
-(TBD) None.
-
-= 2.0.0 =
-
-(2021/11/26) Partial rewrite of the plugin - the plugin class name has changed.
+(2024/01/20) Maintenance release.
 
