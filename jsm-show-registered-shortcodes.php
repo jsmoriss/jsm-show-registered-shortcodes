@@ -13,7 +13,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
  * Tested Up To: 6.4.2
- * Version: 2.0.0
+ * Version: 4.0.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -87,7 +87,7 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 			$parent_title = sprintf( __( 'Registered Shortcodes (%d)', 'jsm-show-registered-shortcodes' ), count( $shortcode_tags ) );
 
 			/*
-			 * Add the parent item.
+			 * Add parent item.
 			 */
 			$args = array(
 				'id'    => $parent_slug,
@@ -130,13 +130,13 @@ if ( ! class_exists( 'JsmSrsc' ) ) {
 
 			} elseif ( is_array( $callback ) ) {
 
-				if ( is_string( $callback[0] ) ) {	// Static method.
+				if ( is_string( $callback[ 0 ] ) ) {	// Static method.
 
-					return $callback[0] . ':: ' . $callback[1];
+					return $callback[ 0 ] . ':: ' . $callback[ 1 ];
 
-				} elseif ( is_object( $callback[0] ) ) {
+				} elseif ( is_object( $callback[ 0 ] ) ) {
 
-					return get_class( $callback[0] ) . '->' . $callback[1];
+					return get_class( $callback[ 0 ] ) . '->' . $callback[ 1 ];
 				}
 			}
 
