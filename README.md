@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM Show Registered Shortcodes</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Simple and lightweight plugin to show all registered shortcodes under a &quot;Registered Shortcodes&quot; toolbar menu item.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.0.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>4.9.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>6.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>7.0</td></tr>
